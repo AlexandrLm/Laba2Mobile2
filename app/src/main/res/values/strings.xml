@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Laba2Mobile2</string>
+    <string name="buttonO">o</string>
+    <string name="buttonX">x</string>
+    <string name="buttonEmpty">empty</string>
+    <string name="nullsTurn">Ходят нолики</string>
+    <string name="krestTurn">Ходят крестики</string>
+</resources>
