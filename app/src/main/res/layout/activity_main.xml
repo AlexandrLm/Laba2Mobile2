@@ -21,7 +21,11 @@
             android:id="@+id/button1"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -29,7 +33,11 @@
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -37,7 +45,11 @@
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
     </LinearLayout>
@@ -58,7 +70,11 @@
             android:id="@+id/button4"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -66,7 +82,11 @@
             android:id="@+id/button5"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -74,7 +94,11 @@
             android:id="@+id/button6"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
     </LinearLayout>
@@ -86,7 +110,6 @@
         android:layout_marginStart="1dp"
         android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
-        android:onClick="pressButton"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -96,7 +119,11 @@
             android:id="@+id/button7"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -104,7 +131,11 @@
             android:id="@+id/button8"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
 
@@ -112,7 +143,11 @@
             android:id="@+id/button9"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_weight="1"
+            android:backgroundTint="#F4B4C1"
             android:onClick="pressButton"
             android:textSize="64sp" />
     </LinearLayout>
@@ -121,8 +156,9 @@
         android:id="@+id/who"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="4dp"
         android:text="@string/nullsTurn"
+        android:textAlignment="center"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -135,16 +171,17 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:clickable="true"
+        android:onClick="restart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_popup_sync" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Итог игры"
+        android:text="@string/resultMain"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
