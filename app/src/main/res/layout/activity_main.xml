@@ -10,123 +10,135 @@
         android:id="@+id/linearLayout"
         android:layout_width="409dp"
         android:layout_height="129dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="false"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <Button
+        <ImageView
             android:id="@+id/button1"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button3"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout2"
         android:layout_width="409dp"
         android:layout_height="129dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:clickable="false"
+        android:onClick="pressButton"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
+        <ImageView
             android:id="@+id/button4"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button5"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button6"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
+
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout3"
         android:layout_width="409dp"
         android:layout_height="129dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="1dp"
+        android:layout_marginTop="5dp"
+        android:clickable="false"
         android:onClick="pressButton"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-        <Button
+        <ImageView
             android:id="@+id/button7"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button8"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
 
-        <Button
+        <ImageView
             android:id="@+id/button9"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
             android:onClick="pressButton"
-            android:textSize="64sp" />
+            app:srcCompat="@drawable/empty_background" />
     </LinearLayout>
 
     <TextView
         android:id="@+id/who"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginBottom="32dp"
         android:text="@string/nullsTurn"
+        android:textAlignment="center"
         android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/restartButton"
@@ -135,18 +147,33 @@
         android:layout_marginEnd="25dp"
         android:layout_marginBottom="25dp"
         android:clickable="true"
+        android:onClick="restart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@android:drawable/ic_popup_sync" />
 
     <TextView
-        android:id="@+id/result"
+        android:id="@+id/resultText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="Итог игры"
+        android:text="@string/resultMain"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+    <TextView
+        android:id="@+id/scoreText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="X: 0\nO: 0"
+        android:textAlignment="textStart"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.036"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
