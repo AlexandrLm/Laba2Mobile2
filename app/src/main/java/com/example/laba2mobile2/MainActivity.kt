@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
     private var turns : Boolean = true
-    private lateinit var but : Array<Array<Button>>
+    private lateinit var but : Array<Array<ImageView>>
     private var score : Array<Int> = Array(2) { 0 }
+    private var clickEnable : Boolean = true
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -55,6 +57,7 @@ class MainActivity : AppCompatActivity() {
                 changeTextOnButton(8, text)
             }
         }
+        println(v.contentDescription)
         gameLogic()
     }
     private fun switchTurns(){
@@ -69,23 +72,28 @@ class MainActivity : AppCompatActivity() {
         }
     }
     private fun changeTextOnButton(i : Int, text : String){
-        if(but[i/3][i%3].text == "") {
-            but[i/3][i%3].text = text
+        if(but[i/3][i%3].contentDescription == null) {
+            but[i/3][i%3].contentDescription = text
+            if (text == "x")
+                but[i/3][i%3].setImageResource(R.drawable.krest_background)
+            else if (text == "o")
+                but[i/3][i%3].setImageResource(R.drawable.circle_background)
             switchTurns()
         }
     }
     fun restart(v : View){
         val whoWin : TextView = findViewById(R.id.resultText)
+        whoWin.setText(R.string.resultMain)
         println("RESTART")
-
+        clickEnable = true
         for(row in but){
             for (n in  row) {
-                n.text = ""
                 n.isClickable = true
+                n.contentDescription = null
+                n.setImageResource(R.drawable.empty_background)
             }
         }
 
-        whoWin.setText(R.string.resultMain)
     }
     @SuppressLint("SetTextI18n")
     private fun win(text : Int){
@@ -97,15 +105,19 @@ class MainActivity : AppCompatActivity() {
         }
         whoWin.setText(text)
         scoreT.text = "X: ${score[0]}\nO: ${score[1]}"
+        clickEnable = false
     }
 
     private fun gameLogic(){
+        if (!clickEnable) {
+            return
+        }
         for (row in but) {
-            if (row[0].text == row[1].text && row[0].text == row[2].text) {
-                if (row[0].text == "x") {
+            if (row[0].contentDescription == row[1].contentDescription && row[0].contentDescription == row[2].contentDescription) {
+                if (row[0].contentDescription == "x") {
                     score[0]++
                     win(R.string.krestWin)
-                } else if (row[0].text == "o") {
+                } else if (row[0].contentDescription == "o") {
                     score[1]++
                     win(R.string.nullsWin)
                 }
@@ -113,24 +125,24 @@ class MainActivity : AppCompatActivity() {
         }
 
         for (i in 0..2) {
-            if (but[0][i].text == but[1][i].text && but[0][i].text == but[2][i].text) {
-                if (but[0][i].text == "x") {
+            if (but[0][i].contentDescription == but[1][i].contentDescription && but[0][i].contentDescription == but[2][i].contentDescription) {
+                if (but[0][i].contentDescription == "x") {
                     score[0]++
                     win(R.string.krestWin)
                 }
-                else if (but[0][i].text == "o") {
+                else if (but[0][i].contentDescription == "o") {
                     score[1]++
                     win(R.string.nullsWin)
                 }
             }
         }
 
-        if (but[2][0].text == but[1][1].text && but[2][0].text == but[0][2].text ||
-            but[0][0].text == but[1][1].text && but[0][0].text == but[2][2].text) {
-            if (but[1][1].text == "x") {
+        if (but[2][0].contentDescription == but[1][1].contentDescription && but[2][0].contentDescription == but[0][2].contentDescription ||
+            but[0][0].contentDescription == but[1][1].contentDescription && but[0][0].contentDescription == but[2][2].contentDescription) {
+            if (but[1][1].contentDescription == "x") {
                 score[0]++
                 win(R.string.krestWin)
-            } else if (but[1][1].text == "o") {
+            } else if (but[1][1].contentDescription == "o") {
                 score[1]++
                 win(R.string.nullsWin)
             }
@@ -139,12 +151,12 @@ class MainActivity : AppCompatActivity() {
         var countEmptyButton : Int = 0
         for(row in but){
             for (n in  row) {
-                if(n.text == ""){
+                if(n.contentDescription == null){
                     countEmptyButton++
                 }
             }
         }
-        if (countEmptyButton == 0){
+        if (countEmptyButton == 0) {
             win(R.string.draw)
         }
     }
