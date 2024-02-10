@@ -8,4 +8,5 @@
     <string name="resultMain">Итог игры</string>
     <string name="krestWin">Крестики выиграли</string>
     <string name="nullsWin">Нолики выиграли</string>
+    <string name="draw">Ничья</string>
 </resources>
